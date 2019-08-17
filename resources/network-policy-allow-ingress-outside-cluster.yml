@@ -1,0 +1,12 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-external-myapp
+spec:
+  podSelector:
+    matchLabels:
+      app: myapp
+  ingress:
+  - from: []
+    ports:
+    - port: 8080
